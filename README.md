@@ -6,19 +6,11 @@ A modern, minimalist, and high-performance browser-to-browser voice calling appl
 
 ## ✨ Features
 
-- **Real-time Voice Calls**: High-quality audio calling using WebRTC technology.
-- **Room-based Signaling**: Simple room ID system for connecting peers instantly.
-- **Premium UI/UX**: Sleek dark mode design with glassmorphism effects, vibrant gradients, and smooth animations.
-- **Live Status Tracking**: Real-time connection status and call timer.
-- **Controls**: Easy-to-use mute/unmute and end call functionality.
-- **Responsive Design**: Works seamlessly on desktops and mobile browsers.
-
-## 🚀 Tech Stack
-
-- **Frontend**: HTML5, Vanilla CSS3 (Custom animations & Glassmorphism).
-- **Backend**: Node.js with [ws](https://www.npmjs.com/package/ws) for WebSocket signaling.
-- **Communication**: WebRTC (RTCPeerConnection API) with **PeerJS** for serverless signaling.
-- **Deployment**: Optimized for **Vercel** (Static Hosting).
+- **Direct Calling**: Call any user instantly using their unique Calling ID.
+- **Real-time Notifications**: Receive system-level notifications for incoming calls even if the tab is in the background.
+- **Modern UI**: Sleek calling interface with glassmorphism and animated status indicators.
+- **Privacy First**: Peer-to-peer audio calling using PeerJS.
+- **No Room IDs Needed**: Just share your ID and start talking.
 
 ## 🚀 Getting Started
 
@@ -31,23 +23,16 @@ A modern, minimalist, and high-performance browser-to-browser voice calling appl
    ```
 
 2. **Open the app**:
-   Simply open `index.html` in your browser, or deploy to Vercel.
-
-## ☁️ Deployment
-
-This app is designed to be deployed on **Vercel**. 
-
-1. Push your code to GitHub.
-2. Link your repository to Vercel.
-3. It will automatically deploy as a static site.
+   Open `index.html` in any modern web browser.
 
 ## 📖 How to Use
 
-1. **Open Dailer** in two different browser tabs or on two different devices.
-2. **Enter the same Room ID** (e.g., `1234`) on both devices.
-3. Click **Start / Join Call**.
-4. The first person to join will wait; the second person will see an **Incoming Call** screen.
-5. Click **Accept** to start talking!
+1. **Open Dailer** on two different devices or tabs.
+2. Note your **Calling ID** displayed on the home screen.
+3. On the first device, enter the **Calling ID** of the second device.
+4. Click **Call Friend**.
+5. The second device will receive a notification and show an **Incoming Call** screen.
+6. Click **Accept** to connect!
 
 ## 🛡️ Privacy & Security
 

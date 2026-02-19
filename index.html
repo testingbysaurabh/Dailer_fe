@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Call App</title>
+  <title>Dailer - Direct Calling</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     * {
@@ -75,7 +75,6 @@
       }
     }
 
-    /* ── SCREENS ── */
     .screen {
       display: none;
       width: 100%;
@@ -99,20 +98,18 @@
       }
     }
 
-    /* ── CARD ── */
     .card {
       background: rgba(255, 255, 255, 0.05);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 24px;
-      padding: 48px 40px;
+      padding: 40px;
       box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.05);
       position: relative;
       z-index: 10;
     }
 
-    /* ── ICON ── */
     .icon-wrapper {
       width: 72px;
       height: 72px;
@@ -136,12 +133,6 @@
       box-shadow: 0 8px 24px rgba(239, 68, 68, 0.5);
     }
 
-    .icon-wrapper.yellow {
-      background: linear-gradient(135deg, #f59e0b, #d97706);
-      box-shadow: 0 8px 24px rgba(245, 158, 11, 0.5);
-      animation: ringBounce 0.6s ease-in-out infinite;
-    }
-
     @keyframes pulse {
 
       0%,
@@ -154,93 +145,88 @@
       }
     }
 
-    @keyframes ringBounce {
-
-      0%,
-      100% {
-        transform: scale(1) rotate(0deg);
-      }
-
-      25% {
-        transform: scale(1.08) rotate(-8deg);
-      }
-
-      75% {
-        transform: scale(1.08) rotate(8deg);
-      }
-    }
-
-    .phone-icon {
-      font-size: 32px;
-    }
-
     h1 {
       text-align: center;
       color: #fff;
       font-size: 26px;
       font-weight: 700;
       margin-bottom: 6px;
-      letter-spacing: -0.5px;
     }
 
     .subtitle {
       text-align: center;
       color: rgba(255, 255, 255, 0.45);
       font-size: 14px;
-      margin-bottom: 36px;
+      margin-bottom: 30px;
     }
 
-    /* ── INPUT ── */
+    /* MY ID SECTION */
+    .my-id-container {
+      background: rgba(99, 102, 241, 0.1);
+      border: 1px solid rgba(99, 102, 241, 0.2);
+      border-radius: 16px;
+      padding: 16px;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .my-id-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.4);
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+    }
+
+    .my-id-value {
+      font-family: monospace;
+      font-size: 18px;
+      color: #a5b4fc;
+      font-weight: 700;
+      margin-bottom: 10px;
+      display: block;
+      word-break: break-all;
+    }
+
+    .btn-copy {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #fff;
+      font-size: 12px;
+      padding: 6px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .btn-copy:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    /* INPUTS */
     .input-group {
-      margin-bottom: 16px;
+      margin-bottom: 20px;
     }
 
     .input-label {
       display: block;
       color: rgba(255, 255, 255, 0.6);
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 500;
       margin-bottom: 8px;
-      letter-spacing: 0.5px;
       text-transform: uppercase;
     }
 
-    .input-wrapper {
-      position: relative;
-      display: flex;
-      align-items: center;
-    }
-
-    .prefix {
-      position: absolute;
-      left: 16px;
-      color: rgba(255, 255, 255, 0.5);
-      font-size: 15px;
-      font-weight: 500;
-      pointer-events: none;
-      z-index: 1;
-    }
-
-    input[type="text"],
-    input[type="tel"] {
+    input[type="text"] {
       width: 100%;
-      padding: 16px 16px 16px 48px;
+      padding: 16px;
       background: rgba(255, 255, 255, 0.07);
       border: 1.5px solid rgba(255, 255, 255, 0.12);
       border-radius: 14px;
       color: #fff;
-      font-size: 18px;
-      font-weight: 500;
-      font-family: 'Inter', sans-serif;
-      letter-spacing: 1.5px;
+      font-size: 16px;
       outline: none;
-      transition: all 0.3s ease;
-    }
-
-    input::placeholder {
-      color: rgba(255, 255, 255, 0.2);
-      letter-spacing: 0.5px;
-      font-size: 15px;
+      transition: 0.3s;
     }
 
     input:focus {
@@ -249,7 +235,6 @@
       box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.15);
     }
 
-    /* ── BUTTONS ── */
     .btn {
       width: 100%;
       padding: 18px;
@@ -257,16 +242,12 @@
       border-radius: 14px;
       font-size: 16px;
       font-weight: 600;
-      font-family: 'Inter', sans-serif;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
-      letter-spacing: 0.3px;
-      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-      position: relative;
-      overflow: hidden;
+      transition: 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
       text-decoration: none;
     }
 
@@ -277,97 +258,39 @@
     }
 
     .btn-primary:hover {
-      transform: translateY(-3px) scale(1.02);
+      transform: translateY(-3px);
       box-shadow: 0 14px 36px rgba(99, 102, 241, 0.6);
     }
 
     .btn-green {
       background: linear-gradient(135deg, #10b981, #059669);
       color: white;
-      box-shadow: 0 8px 24px rgba(16, 185, 129, 0.4);
     }
 
     .btn-red {
       background: linear-gradient(135deg, #ef4444, #dc2626);
       color: white;
-      box-shadow: 0 8px 24px rgba(239, 68, 68, 0.4);
     }
 
     .btn-ghost {
       background: transparent;
       color: rgba(255, 255, 255, 0.4);
-      border: 1.5px solid rgba(255, 255, 255, 0.08);
-      padding: 14px;
-      font-size: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
     }
 
-    .btn-disabled {
-      background: linear-gradient(135deg, #374151, #4b5563) !important;
-      box-shadow: none !important;
-      cursor: not-allowed !important;
-      transform: none !important;
-      opacity: 0.6;
-    }
-
-    /* ── DIVIDER ── */
-    .divider {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin: 20px 0;
-    }
-
-    .divider-line {
-      flex: 1;
-      height: 1px;
-      background: rgba(255, 255, 255, 0.08);
-    }
-
-    .divider-text {
-      color: rgba(255, 255, 255, 0.25);
-      font-size: 12px;
-      font-weight: 500;
-    }
-
-    /* ── CALL SCREEN ── */
     .call-timer {
       text-align: center;
       color: rgba(255, 255, 255, 0.5);
       font-size: 32px;
       font-weight: 300;
-      letter-spacing: 3px;
-      margin: 8px 0 32px;
-      font-variant-numeric: tabular-nums;
+      margin: 20px 0;
     }
 
-    .call-info {
+    .status-text {
       text-align: center;
-      margin-bottom: 8px;
-    }
-
-    .call-info .room-label {
-      color: rgba(255, 255, 255, 0.4);
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .call-info .room-id {
-      color: rgba(139, 92, 246, 0.9);
-      font-size: 20px;
-      font-weight: 600;
-      letter-spacing: 2px;
-      margin-top: 4px;
-    }
-
-    .call-controls {
-      display: flex;
-      gap: 16px;
-      margin-top: 8px;
-    }
-
-    .call-controls .btn {
-      flex: 1;
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.5);
+      margin-bottom: 20px;
     }
 
     .status-dot {
@@ -377,7 +300,7 @@
       border-radius: 50%;
       background: #10b981;
       margin-right: 6px;
-      animation: blink 1.2s ease-in-out infinite;
+      animation: blink 1.2s infinite;
     }
 
     @keyframes blink {
@@ -392,82 +315,6 @@
       }
     }
 
-    .status-text {
-      text-align: center;
-      font-size: 14px;
-      color: rgba(255, 255, 255, 0.5);
-      margin-bottom: 28px;
-    }
-
-    /* ── WAITING SCREEN ── */
-    .spinner {
-      width: 40px;
-      height: 40px;
-      border: 3px solid rgba(255, 255, 255, 0.1);
-      border-top-color: #8b5cf6;
-      border-radius: 50%;
-      animation: spin 0.9s linear infinite;
-      margin: 0 auto 24px;
-    }
-
-    @keyframes spin {
-      to {
-        transform: rotate(360deg);
-      }
-    }
-
-    .room-code-display {
-      background: rgba(99, 102, 241, 0.1);
-      border: 1.5px dashed rgba(99, 102, 241, 0.4);
-      border-radius: 14px;
-      padding: 16px;
-      text-align: center;
-      margin-bottom: 24px;
-    }
-
-    .room-code-display .label {
-      font-size: 12px;
-      color: rgba(255, 255, 255, 0.4);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 6px;
-    }
-
-    .room-code-display .code {
-      font-size: 28px;
-      font-weight: 700;
-      letter-spacing: 4px;
-      color: #a5b4fc;
-    }
-
-    /* ── INCOMING SCREEN ── */
-    .incoming-avatar {
-      width: 90px;
-      height: 90px;
-      background: linear-gradient(135deg, #6366f1, #8b5cf6);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 20px;
-      font-size: 40px;
-      box-shadow: 0 0 0 8px rgba(99, 102, 241, 0.15), 0 0 0 16px rgba(99, 102, 241, 0.08);
-      animation: incomingPulse 1.5s ease-in-out infinite;
-    }
-
-    @keyframes incomingPulse {
-
-      0%,
-      100% {
-        box-shadow: 0 0 0 8px rgba(99, 102, 241, 0.15), 0 0 0 16px rgba(99, 102, 241, 0.08);
-      }
-
-      50% {
-        box-shadow: 0 0 0 14px rgba(99, 102, 241, 0.2), 0 0 0 28px rgba(99, 102, 241, 0.06);
-      }
-    }
-
-    /* ── TOAST ── */
     .toast {
       position: fixed;
       bottom: 30px;
@@ -477,142 +324,78 @@
       padding: 12px 24px;
       border-radius: 12px;
       font-size: 14px;
-      font-weight: 500;
       backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      background: rgba(99, 102, 241, 0.9);
+      transition: 0.4s;
       z-index: 999;
-      white-space: nowrap;
     }
 
     .toast.show {
       transform: translateX(-50%) translateY(0);
-    }
-
-    .toast.error {
-      background: rgba(239, 68, 68, 0.9);
-    }
-
-    .toast.success {
-      background: rgba(16, 185, 129, 0.9);
-    }
-
-    .toast.info {
-      background: rgba(99, 102, 241, 0.9);
-    }
-
-    .mute-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(239, 68, 68, 0.2);
-      border: 1px solid rgba(239, 68, 68, 0.4);
-      border-radius: 20px;
-      padding: 4px 12px;
-      color: #fca5a5;
-      font-size: 12px;
-      font-weight: 500;
-      margin: 0 auto 16px;
-      width: fit-content;
-    }
-
-    .mute-badge.hidden {
-      display: none;
     }
   </style>
 </head>
 
 <body>
 
+  <!-- JOIN SCREEN -->
   <div class="screen active" id="screenJoin">
     <div class="card">
-      <div class="icon-wrapper">
-        <span class="phone-icon">📞</span>
+      <div class="icon-wrapper">📞</div>
+      <h1>Dailer</h1>
+      <p class="subtitle">Call anyone using their unique ID</p>
+
+      <div class="my-id-container">
+        <span class="my-id-label">Your Calling ID</span>
+        <span class="my-id-value" id="myIdDisplay">Initializing...</span>
+        <button class="btn-copy" onclick="copyMyId()">Copy ID</button>
       </div>
-      <h1>Call App</h1>
-      <p class="subtitle">Enter a Room ID to start or join a call</p>
+
       <div class="input-group">
-        <label class="input-label" for="roomInput">Room ID</label>
-        <div class="input-wrapper">
-          <span class="prefix">#</span>
-          <input type="text" id="roomInput" placeholder="e.g. 1234" autocomplete="off" />
-        </div>
+        <label class="input-label">Whom to call?</label>
+        <input type="text" id="targetIdInput" placeholder="Enter Friend's ID" />
       </div>
-      <p id="joinStatus"
-        style="text-align:center; color:rgba(255,255,255,0.3); font-size:13px; margin-bottom:28px; min-height:20px;">
-      </p>
-      <button class="btn btn-primary btn-disabled" id="joinBtn" onclick="joinRoom()">
-        <span>📞</span> Start / Join Call
+
+      <button class="btn btn-primary" id="callBtn" onclick="startCallFlow()">
+        <span>📞</span> Call Friend
       </button>
-      <div class="divider">
-        <div class="divider-line"></div><span class="divider-text">TIP</span>
-        <div class="divider-line"></div>
-      </div>
-      <p style="text-align:center; color:rgba(255,255,255,0.25); font-size:13px; line-height:1.6;">
-        Share the same Room ID with the person you want to call. Both open this page and enter the same ID.
-      </p>
     </div>
   </div>
 
-  <div class="screen" id="screenWaiting">
+  <!-- CALLING SCREEN (Outgoing) -->
+  <div class="screen" id="screenCalling">
     <div class="card">
-      <div class="spinner"></div>
-      <h1>Waiting...</h1>
-      <p class="subtitle">Share this Room ID with the other person</p>
-      <div class="room-code-display">
-        <div class="label">Room ID</div>
-        <div class="code" id="waitingRoomCode">—</div>
-      </div>
-      <p style="text-align:center; color:rgba(255,255,255,0.35); font-size:14px; margin-bottom:28px;">
-        Call will connect automatically when they join.
-      </p>
-      <button class="btn btn-ghost" onclick="cancelCall()">✕ &nbsp; Cancel</button>
+      <div class="icon-wrapper">⚡</div>
+      <h1>Calling...</h1>
+      <p class="subtitle">Waiting for them to pick up</p>
+      <button class="btn btn-ghost" onclick="cancelCall()">Cancel Call</button>
     </div>
   </div>
 
+  <!-- INCOMING SCREEN -->
   <div class="screen" id="screenIncoming">
     <div class="card">
-      <div class="incoming-avatar">👤</div>
+      <div class="icon-wrapper" style="animation: ringBounce 0.5s infinite;">🔔</div>
       <h1>Incoming Call</h1>
-      <p class="subtitle" style="margin-bottom:32px;">Someone is calling on room <strong id="incomingRoom"
-          style="color:#a5b4fc;"></strong></p>
-      <div class="call-controls">
+      <p class="subtitle">ID: <strong id="callerIdDisplay" style="color:#a5b4fc;"></strong></p>
+      <div style="display:flex; gap:16px;">
         <button class="btn btn-red" onclick="rejectCall()">Decline</button>
         <button class="btn btn-green" onclick="acceptCall()">Accept</button>
       </div>
     </div>
   </div>
 
+  <!-- CALL SCREEN -->
   <div class="screen" id="screenCall">
     <div class="card">
-      <div class="icon-wrapper green">
-        <span class="phone-icon">📞</span>
-      </div>
+      <div class="icon-wrapper green">📞</div>
       <h1>In Call</h1>
-      <div class="call-info">
-        <div class="room-label">Room</div>
-        <div class="room-id" id="callRoomId">—</div>
-      </div>
       <div class="call-timer" id="callTimer">00:00</div>
       <p class="status-text"><span class="status-dot"></span> Connected</p>
-      <div id="muteBadge" class="mute-badge hidden">🔇 Microphone muted</div>
-      <div class="call-controls">
+      <div style="display:flex; gap:16px;">
         <button class="btn btn-ghost" id="muteBtn" onclick="toggleMute()">🎤 Mute</button>
-        <button class="btn btn-red" onclick="endCall()">📵 End Call</button>
+        <button class="btn btn-red" onclick="endCall()">End Call</button>
       </div>
-    </div>
-  </div>
-
-  <div class="screen" id="screenEnded">
-    <div class="card">
-      <div class="icon-wrapper red">
-        <span class="phone-icon">📵</span>
-      </div>
-      <h1>Call Ended</h1>
-      <p class="subtitle" id="endedMsg">The call has ended.</p>
-      <p id="endedDuration"
-        style="text-align:center; color:rgba(255,255,255,0.35); font-size:14px; margin-bottom:32px;"></p>
-      <button class="btn btn-primary" onclick="goHome()">🏠 &nbsp; Home</button>
     </div>
   </div>
 
@@ -625,152 +408,144 @@
     let currentCall = null;
     let localStream = null;
     let isMuted = false;
-    let currentRoom = '';
     let callStartTime = null;
     let timerInterval = null;
 
-    const roomInput = document.getElementById('roomInput');
-    const joinBtn = document.getElementById('joinBtn');
-    const joinStatus = document.getElementById('joinStatus');
-    const remoteAudio = document.getElementById('remoteAudio');
-    const callTimer = document.getElementById('callTimer');
-    const muteBadge = document.getElementById('muteBadge');
-    const muteBtn = document.getElementById('muteBtn');
+    // Initialize Peer on load
+    window.onload = () => {
+      // Create a unique but readable ID
+      const randomSuffix = Math.floor(1000 + Math.random() * 9000);
+      const myId = `user-${randomSuffix}`;
 
-    roomInput.addEventListener('input', function () {
-      const val = this.value.trim();
-      if (val.length > 0) {
-        joinBtn.classList.remove('btn-disabled');
-        joinStatus.textContent = `Room: #${val}`;
-      } else {
-        joinBtn.classList.add('btn-disabled');
-        joinStatus.textContent = '';
-      }
-    });
+      peer = new Peer(myId);
 
-    async function joinRoom() {
-      const room = roomInput.value.trim();
-      if (!room || joinBtn.classList.contains('btn-disabled')) return;
+      peer.on('open', (id) => {
+        document.getElementById('myIdDisplay').textContent = id;
+        requestNotificationPermission();
+      });
 
-      currentRoom = room;
-      showScreen('screenWaiting');
-      document.getElementById('waitingRoomCode').textContent = room;
-
-      try {
-        localStream = await navigator.mediaDevices.getUserMedia({ audio: true, video: false });
-      } catch (err) {
-        showToast('Microphone access denied!', 'error');
-        goHome();
-        return;
-      }
-
-      const peerId1 = `dailer-room-${room}-1`;
-      const peerId2 = `dailer-room-${room}-2`;
-
-      peer = new Peer(peerId1);
-      peer.on('open', () => {
-        console.log('Joined as Peer 1');
-        setupPeerListeners();
+      peer.on('call', (call) => {
+        handleIncomingCall(call);
       });
 
       peer.on('error', (err) => {
-        if (err.type === 'unavailable-id') {
-          peer = new Peer(peerId2);
-          peer.on('open', () => {
-            setupPeerListeners();
-            const call = peer.call(peerId1, localStream);
-            handleOutboundCall(call);
-          });
-        } else {
-          showToast('Connection error', 'error');
-          goHome();
-        }
+        showToast("Error: " + err.type, "red");
       });
+    };
+
+    function requestNotificationPermission() {
+      if ("Notification" in window && Notification.permission !== "granted") {
+        Notification.requestPermission();
+      }
     }
 
-    function setupPeerListeners() {
-      peer.on('call', (call) => {
-        document.getElementById('incomingRoom').textContent = `#${currentRoom}`;
-        showScreen('screenIncoming');
-        window.pendingCall = call;
-      });
+    function showCallNotification(callerId) {
+      if ("Notification" in window && Notification.permission === "granted") {
+        new Notification("Incoming Call", {
+          body: `User ${callerId} is calling you!`,
+          icon: 'https://cdn-icons-png.flaticon.com/512/3059/3059502.png'
+        });
+      }
     }
 
-    function handleOutboundCall(call) {
-      currentCall = call;
-      setupCallListeners(call);
+    async function startCallFlow() {
+      const targetId = document.getElementById('targetIdInput').value.trim();
+      if (!targetId) return showToast("Please enter an ID to call");
+
+      try {
+        localStream = await navigator.mediaDevices.getUserMedia({ audio: true, video: false });
+        showScreen('screenCalling');
+
+        const call = peer.call(targetId, localStream);
+        setupCallListeners(call);
+        currentCall = call;
+      } catch (err) {
+        showToast("Mic access denied!");
+      }
+    }
+
+    function handleIncomingCall(call) {
+      window.pendingCall = call;
+      document.getElementById('callerIdDisplay').textContent = call.peer;
+      showScreen('screenIncoming');
+      showCallNotification(call.peer);
+
+      // Play a ringtone logic could go here
     }
 
     async function acceptCall() {
-      if (!window.pendingCall) return;
-      currentCall = window.pendingCall;
-      currentCall.answer(localStream);
-      setupCallListeners(currentCall);
-      startCall();
+      try {
+        localStream = await navigator.mediaDevices.getUserMedia({ audio: true, video: false });
+        window.pendingCall.answer(localStream);
+        currentCall = window.pendingCall;
+        setupCallListeners(currentCall);
+        startCallTimer();
+      } catch (err) {
+        showToast("Mic access required to accept call");
+      }
+    }
+
+    function rejectCall() {
+      if (window.pendingCall) window.pendingCall.close();
+      goHome();
     }
 
     function setupCallListeners(call) {
       call.on('stream', (remoteStream) => {
-        remoteAudio.srcObject = remoteStream;
-        if (!timerInterval) startCall();
+        document.getElementById('remoteAudio').srcObject = remoteStream;
+        if (!timerInterval) startCallTimer();
       });
-      call.on('close', () => { showEndedScreen(); cleanupCall(); });
+
+      call.on('close', () => {
+        showToast("Call ended");
+        cleanupCall();
+      });
+
+      call.on('error', () => {
+        showToast("Call failed");
+        cleanupCall();
+      });
     }
 
-    function startCall() {
+    function startCallTimer() {
       showScreen('screenCall');
-      document.getElementById('callRoomId').textContent = `#${currentRoom}`;
       callStartTime = Date.now();
-      timerInterval = setInterval(updateTimer, 1000);
-    }
-
-    function updateTimer() {
-      const elapsed = Math.floor((Date.now() - callStartTime) / 1000);
-      const m = String(Math.floor(elapsed / 60)).padStart(2, '0');
-      const s = String(elapsed % 60).padStart(2, '0');
-      callTimer.textContent = `${m}:${s}`;
+      timerInterval = setInterval(() => {
+        const elapsed = Math.floor((Date.now() - callStartTime) / 1000);
+        const m = String(Math.floor(elapsed / 60)).padStart(2, '0');
+        const s = String(elapsed % 60).padStart(2, '0');
+        document.getElementById('callTimer').textContent = `${m}:${s}`;
+      }, 1000);
     }
 
     function toggleMute() {
       if (!localStream) return;
       isMuted = !isMuted;
       localStream.getAudioTracks().forEach(t => t.enabled = !isMuted);
-      muteBadge.classList.toggle('hidden', !isMuted);
-      muteBtn.innerHTML = isMuted ? '🔇 Unmute' : '🎤 Mute';
+      document.getElementById('muteBtn').innerHTML = isMuted ? '🔇 Unmute' : '🎤 Mute';
     }
 
     function endCall() {
       if (currentCall) currentCall.close();
-      showEndedScreen();
       cleanupCall();
-    }
-
-    function showEndedScreen() {
-      const elapsed = callStartTime ? Math.floor((Date.now() - callStartTime) / 1000) : 0;
-      if (elapsed > 0) {
-        const m = String(Math.floor(elapsed / 60)).padStart(2, '0');
-        const s = String(elapsed % 60).padStart(2, '0');
-        document.getElementById('endedDuration').textContent = `Duration: ${m}:${s}`;
-      }
-      showScreen('screenEnded');
     }
 
     function cleanupCall() {
       clearInterval(timerInterval);
       timerInterval = null;
       if (localStream) { localStream.getTracks().forEach(t => t.stop()); localStream = null; }
-      if (peer) { peer.destroy(); peer = null; }
-      remoteAudio.srcObject = null;
-    }
-
-    function goHome() {
-      cleanupCall();
-      showScreen('screenJoin');
+      currentCall = null;
+      document.getElementById('remoteAudio').srcObject = null;
+      goHome();
     }
 
     function cancelCall() {
+      if (currentCall) currentCall.close();
       cleanupCall();
-      goHome();
+    }
+
+    function goHome() {
+      showScreen('screenJoin');
     }
 
     function showScreen(id) {
@@ -778,10 +553,16 @@
       document.getElementById(id).classList.add('active');
     }
 
-    function showToast(msg, type = 'info') {
+    function copyMyId() {
+      const id = document.getElementById('myIdDisplay').textContent;
+      navigator.clipboard.writeText(id);
+      showToast("ID copied to clipboard!");
+    }
+
+    function showToast(msg) {
       const toast = document.getElementById('toast');
       toast.textContent = msg;
-      toast.className = `toast ${type} show`;
+      toast.classList.add('show');
       setTimeout(() => toast.classList.remove('show'), 3000);
     }
   </script>
