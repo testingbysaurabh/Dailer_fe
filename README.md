@@ -17,14 +17,10 @@ A modern, minimalist, and high-performance browser-to-browser voice calling appl
 
 - **Frontend**: HTML5, Vanilla CSS3 (Custom animations & Glassmorphism).
 - **Backend**: Node.js with [ws](https://www.npmjs.com/package/ws) for WebSocket signaling.
-- **Communication**: WebRTC (RTCPeerConnection API) with Google STUN servers.
+- **Communication**: WebRTC (RTCPeerConnection API) with **PeerJS** for serverless signaling.
+- **Deployment**: Optimized for **Vercel** (Static Hosting).
 
-## 🛠️ Getting Started
-
-### Prerequisites
-
-- Node.js installed on your machine.
-- A modern web browser (Chrome, Firefox, Safari, Edge).
+## 🚀 Getting Started
 
 ### Installation
 
@@ -34,18 +30,16 @@ A modern, minimalist, and high-performance browser-to-browser voice calling appl
    cd Dailer_fe
    ```
 
-2. **Install dependencies**:
-   ```bash
-   npm install
-   ```
+2. **Open the app**:
+   Simply open `index.html` in your browser, or deploy to Vercel.
 
-3. **Run the server**:
-   ```bash
-   npm start
-   ```
+## ☁️ Deployment
 
-4. **Open the app**:
-   Navigate to `http://localhost:3000` (or the port specified in your console) in your browser.
+This app is designed to be deployed on **Vercel**. 
+
+1. Push your code to GitHub.
+2. Link your repository to Vercel.
+3. It will automatically deploy as a static site.
 
 ## 📖 How to Use
 
